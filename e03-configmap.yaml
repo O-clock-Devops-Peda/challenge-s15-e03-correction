@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: nginx-e03
+  namespace: mathieu
+data:
+  my_first_name: Chou
+  my_last_name: VANG
+  index.html: |
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+    </head>
+    <body>
+      <h1>Bienvenu les DEVOPS, challenge réussi !</h1>
+    </body>
+    <style>
+      h1 {
+        text-align: center;
+      }
+    </style>
+    </html>

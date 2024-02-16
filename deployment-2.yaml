@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: nginx-e03-2
+  name: nginx-e03-2
+  namespace: mathieu
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-e03-2
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: nginx-e03-2
+    spec:
+      volumes:
+        - name: config-volume
+          configMap:
+            name: nginx-e03
+      containers:
+        - image: nginx:latest
+          name: nginx
+          volumeMounts:
+            - name: config-volume
+              mountPath: "/usr/share/nginx/html"
+          resources: {}
+status: {}
